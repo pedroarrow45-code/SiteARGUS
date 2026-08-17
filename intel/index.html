@@ -2106,8 +2106,16 @@
     .pipeline { grid-template-columns: 1fr; gap: 1.4rem; }
   }
 .intel-nav-links { display:flex; align-items:center; gap:2rem; margin-left:auto; }
-  .intel-nav-links > a:not(.nav-cta) { font-family:'IBM Plex Mono',monospace; font-size:.62rem; letter-spacing:.18em; text-decoration:none; }
+  .intel-nav-links > a:not(.nav-cta) { position:relative; font-family:'IBM Plex Mono',monospace; font-size:.62rem; letter-spacing:.18em; text-decoration:none; } .intel-nav-links .intel-active { color:var(--gold-warm); } .intel-nav-links .intel-active::after { content:''; position:absolute; left:0; right:0; bottom:-.5rem; height:1px; background:var(--gold); }
   @media(max-width:700px){ .intel-nav-links > a:not(.nav-cta){display:none}.intel-nav-links{gap:0}.nav-mark .argus{font-size:1.2rem}.nav-mark .intel{font-size:.55rem} }
+
+  .intel-decision-list { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--gold-border-soft); margin-top:3rem; }
+  .intel-decision-list span { padding:1.2rem .8rem 1.2rem 0; border-bottom:1px solid var(--gold-border-soft); font:400 .62rem 'IBM Plex Mono',monospace; letter-spacing:.12em; color:var(--ice-3); text-transform:uppercase; }
+  .intel-method { display:grid; grid-template-columns:repeat(5,1fr); border:1px solid var(--gold-border-soft); margin-top:3rem; }
+  .intel-method article { padding:1.6rem; border-right:1px solid var(--gold-border-soft); } .intel-method article:last-child{border-right:0}
+  .intel-method b { color:var(--gold); font:400 .58rem 'IBM Plex Mono',monospace; letter-spacing:.13em; } .intel-method h3{font-size:1.45rem;margin:.8rem 0}.intel-method p{color:var(--ice-3);font-size:.82rem}
+  @media(max-width:900px){.intel-decision-list{grid-template-columns:1fr 1fr}.intel-method{grid-template-columns:1fr}.intel-method article{border-right:0;border-bottom:1px solid var(--gold-border-soft)}}
+  @media(max-width:500px){.intel-decision-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -2159,7 +2167,7 @@
 <!-- ───────────── NAV ───────────── -->
 <nav>
   <a href="/" class="nav-mark"><span class="argus">ARGUS</span><span class="intel">GROUP</span></a>
-  <div class="intel-nav-links"><a href="/systems/">SYSTEMS</a><a href="/intel/">INTEL</a><a href="/#sobre">SOBRE</a><a href="#contact" class="nav-cta">Briefing</a></div>
+  <div class="intel-nav-links"><a href="/systems/">SYSTEMS</a><a href="/intel/" class="intel-active" aria-current="page">INTEL</a><a href="/#sobre">SOBRE</a><a href="#contact" class="nav-cta">Briefing</a></div>
 </nav>
 
 <!-- ───────────── HERO ───────────── -->
@@ -2183,7 +2191,7 @@
     <h1 class="hero-tagline" id="typewriter-target"></h1>
 
     <p class="hero-translation">
-      <strong>Produzimos dossiês de inteligência sobre pessoas, empresas e situações</strong> — para subsidiar decisões em que o erro tem custo mensurável. Operamos exclusivamente com fontes abertas, registros públicos e rastros digitais analisáveis, sob protocolo de sigilo estrito.
+      <strong>Inteligência estratégica sobre pessoas, empresas e situações</strong> construída exclusivamente a partir de fontes abertas, registros públicos e rastros digitais analisáveis — para subsidiar decisões em que o erro tem custo mensurável.
     </p>
 
     <div class="hero-actions">
@@ -2201,10 +2209,33 @@
   </div>
 </section>
 
-<!-- ───────────── 01 — TENSÃO ───────────── -->
+<!-- ───────────── DECISION + METHOD ───────────── -->
+<section id="when" class="section-full">
+  <div class="section-inner">
+    <div class="section-label reveal">01 — QUANDO CONTRATAR</div>
+    <h2 class="section-title reveal delay-1" style="max-width:900px;">Quando a informação disponível<br><em>não é suficiente para decidir.</em></h2>
+    <p class="section-lead reveal delay-2">Mandatos de inteligência começam com uma decisão específica e uma pergunta que precisa ser respondida com evidências, contexto e análise estruturada.</p>
+    <div class="intel-decision-list reveal delay-2"><span>Novos sócios</span><span>Parceiros</span><span>Investimentos</span><span>Aquisições</span><span>Disputas</span><span>Risco reputacional</span><span>Crédito</span><span>Contrapartes</span><span>Executivos</span><span>Situações complexas</span></div>
+  </div>
+</section>
+<section id="intel-method" class="section-full">
+  <div class="section-inner">
+    <div class="section-label reveal">02 — METODOLOGIA</div>
+    <h2 class="section-title reveal delay-1">Da pergunta à <em>inteligência.</em></h2>
+    <div class="intel-method reveal delay-2">
+      <article><b>01 / BRIEFING</b><h3>Decisão</h3><p>Entendemos a decisão e a pergunta.</p></article>
+      <article><b>02 / COLLECTION</b><h3>Fontes</h3><p>Localizamos fontes abertas e registros relevantes.</p></article>
+      <article><b>03 / ANALYSIS</b><h3>Relações</h3><p>Cruzamos dados, eventos e inconsistências.</p></article>
+      <article><b>04 / INTELLIGENCE</b><h3>Contexto</h3><p>Transformamos evidências em hipóteses analíticas.</p></article>
+      <article><b>05 / DELIVERY</b><h3>Material</h3><p>Entregamos inteligência estruturada para a decisão.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 03 — CONTEXTO ───────────── -->
 <section id="tension" class="section-full">
   <div class="section-inner">
-    <div class="section-label reveal">01 — CONTEXTO</div>
+    <div class="section-label reveal">03 — CONTEXTO</div>
     <h2 class="section-title reveal delay-1" style="max-width: 920px;">
       A informação que você não tem<br>
       <em>é a que define o custo da sua decisão.</em>
@@ -2275,7 +2306,7 @@
 <!-- ───────────── 02 — DEMONSTRAÇÃO ───────────── -->
 <section id="demo">
   <div class="demo-intro">
-    <div class="section-label reveal">02 — A ENTREGA</div>
+    <div class="section-label reveal">04 — A ENTREGA</div>
     <h2 class="section-title reveal delay-1">O que sai do outro lado.</h2>
     <p class="section-lead reveal delay-2">
       A estrutura abaixo representa um dossiê executivo entregue ao final de uma análise. Conteúdo é ilustrativo — em casos reais, o documento é estritamente confidencial. O formato, a profundidade analítica e o padrão de evidência, porém, são fiéis à entrega real.
@@ -2412,7 +2443,7 @@
 <!-- ───────────── 03 — WHY ARGUS ───────────── -->
 <section id="why" class="section-full">
   <div class="section-inner">
-    <div class="section-label reveal">03 — POR QUE A ARGUS</div>
+    <div class="section-label reveal">05 — POR QUE A ARGUS</div>
     <h2 class="section-title reveal delay-1">
       Três fatores definem<br><em>a diferença operacional.</em>
     </h2>
@@ -2448,7 +2479,7 @@
 <!-- ───────────── 04 — SERVICES ───────────── -->
 <section id="services" class="section-full">
   <div class="section-inner">
-    <div class="section-label reveal">04 — O QUE ENTREGAMOS</div>
+    <div class="section-label reveal">06 — O QUE ENTREGAMOS</div>
     <h2 class="section-title reveal delay-1" style="margin-bottom: 4rem;">
       Inteligência aplicada<br><em>onde a decisão é cara.</em>
     </h2>
@@ -2516,7 +2547,7 @@
 <!-- ───────────── 05 — MATCHING ───────────── -->
 <section id="matching">
   <div class="matching-intro">
-    <div class="section-label reveal">05 — QUEM CONTRATA O QUÊ</div>
+    <div class="section-label reveal">07 — QUEM CONTRATA O QUÊ</div>
     <h2 class="section-title reveal delay-1">O perfil dos mandatos.</h2>
     <p class="section-lead reveal delay-2">
       Não atendemos volume. Atendemos decisores cuja única operação errada tem custo superior ao retainer anual de inteligência. Abaixo, o emparelhamento típico entre perfil e mandato.
@@ -2615,10 +2646,10 @@
   </div>
 </section>
 
-<!-- ───────────── 06 — METODOLOGIA · ARQUITETURA ARGUS ───────────── -->
+<!-- ───────────── 08 — ARQUITETURA ARGUS ───────────── -->
 <section id="method" class="section-full">
   <div class="section-inner">
-    <div class="section-label reveal">06 — METODOLOGIA · ARQUITETURA ARGUS</div>
+    <div class="section-label reveal">08 — ARQUITETURA ARGUS</div>
     <h2 class="section-title reveal delay-1">
       Quatro agentes proprietários.<br><em>Uma decisão clara no final.</em>
     </h2>
@@ -2830,7 +2861,7 @@
 
 <!-- ───────────── 09 — FAQ ───────────── -->
 <section id="faq">
-  <div class="section-label reveal">09 — PERGUNTAS FREQUENTES</div>
+  <div class="section-label reveal">11 — PERGUNTAS FREQUENTES</div>
   <h2 class="section-title reveal delay-1">
     O que perguntam<br>antes de contratar.
   </h2>
@@ -2901,7 +2932,7 @@
 <!-- ───────────── 10 — SYNTHESIS + CONTACT ───────────── -->
 <section id="contact">
   <div class="synthesis reveal">
-    <div class="section-label" style="justify-content: center;">10 — CONTATO</div>
+    <div class="section-label" style="justify-content: center;">12 — CONTATO</div>
     <h2>
       Antes de você assinar,<br>
       <em>saiba com quem está lidando.</em>
