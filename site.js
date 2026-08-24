@@ -6,7 +6,16 @@ document.querySelector('.menu')?.addEventListener('click', event => {
   const open = links?.classList.toggle('open');
   event.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
-document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => document.querySelector('.nav-links')?.classList.remove('open')));
+document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => {
+  document.querySelector('.nav-links')?.classList.remove('open');
+  document.querySelector('.menu')?.setAttribute('aria-expanded', 'false');
+}));
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  document.querySelector('.nav-links')?.classList.remove('open');
+  document.querySelector('.menu')?.setAttribute('aria-expanded', 'false');
+  document.querySelector('.menu')?.focus();
+});
 if (!reducedMotion && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -53,6 +62,13 @@ document.querySelectorAll('.tool-tabs button').forEach(button => {
   };
   button.addEventListener('click', activate);
   button.addEventListener('mouseenter', activate);
+  button.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    const tabs = [...button.parentElement.querySelectorAll('button')];
+    const direction = event.key === 'ArrowRight' ? 1 : -1;
+    const next = tabs[(tabs.indexOf(button) + direction + tabs.length) % tabs.length];
+    next.focus(); next.click(); event.preventDefault();
+  });
 });
 // Adapted from the original ARGUS typewriter: short technical labels only, never essential long-form copy.
 document.querySelectorAll('[data-typewriter]').forEach(element => {
