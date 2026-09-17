@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/intel/family-office",
+      "destination": "/intel/",
+      "permanent": true
+    },
+    {
+      "source": "/intel/family-office/",
+      "destination": "/intel/",
+      "permanent": true
+    },
+    {
+      "source": "/intel/family-office/index.html",
+      "destination": "/intel/",
+      "permanent": true
+    }
+  ]
+}

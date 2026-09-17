@@ -79,7 +79,7 @@ const setDualMode = mode => {
   document.body.dataset.dualMode = mode;
   document.querySelectorAll('[data-mode-label]').forEach(label => label.classList.toggle('is-active', label.dataset.modeLabel === mode));
   const copy = dualConsole.querySelector('[data-dual-copy]');
-  if (copy) copy.textContent = mode === 'intel' ? 'INFORMATION → CONTEXT → DECISION' : 'OPERATIONS → SYSTEM → CAPACITY';
+  if (copy) copy.textContent = mode === 'intel' ? 'PROCESS → SCOPE → SOFTWARE' : 'POSTOS → SISTEMAS → CONTROLE';
 };
 document.querySelectorAll('[data-dual-trigger], .group-hero .actions a').forEach(trigger => {
   const mode = trigger.dataset.dualTrigger || (trigger.getAttribute('href')?.includes('/intel') ? 'intel' : 'systems');
@@ -109,7 +109,7 @@ graph?.querySelectorAll('[data-node]').forEach(node => {
   node.addEventListener('mouseleave', () => {
     delete graph.dataset.focus;
     const focus = graph.querySelector('.graph-focus strong');
-    if (focus) focus.textContent = 'ENTITY / 01';
+    if (focus) focus.textContent = 'SYSTEM / 01';
   });
 });
 // Tool tabs work with hover, keyboard and touch; copy describes functions, never client results.
@@ -147,7 +147,4 @@ document.querySelectorAll('[data-typewriter]').forEach(element => {
   element.textContent = ''; element.classList.add('type-cursor'); let index = 0;
   const type = () => { element.textContent = text.slice(0, ++index); if (index < text.length) setTimeout(type, 24); else setTimeout(() => element.classList.remove('type-cursor'), 900); };
   setTimeout(type, 180);
-});
-document.querySelector('.contact-form')?.addEventListener('submit', event => {
-  event.preventDefault(); const button = event.currentTarget.querySelector('button'); button.textContent = 'REQUISIÇÃO REGISTRADA'; button.disabled = true;
 });
