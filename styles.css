@@ -19,3 +19,23 @@ section{position:relative;padding:clamp(90px,12vw,180px) 0;border-top:1px solid 
 @media(max-width:1000px){.proof-opening{grid-template-columns:1fr 1fr}.proof-opening>.section-id{grid-column:1/-1}.proof-chapter{grid-template-columns:1fr}.proof-operation .proof-visual{order:1}.proof-operation .proof-narrative{order:2}.proof-visual{position:relative;top:auto}.proof-narrative{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0}.product-heading{grid-column:1/-1;padding-bottom:20px}.proof-step{min-height:0;padding:25px 0;opacity:1;transform:none}.image-spotlight{display:none}.stock-concept{grid-template-columns:1fr}}
 @media(max-width:650px){.proof-opening{grid-template-columns:1fr}.proof-seal{width:max-content}.proof-chapter{padding:85px 0}.browser-frame{margin-inline:calc(var(--pad)*-1);padding:6px 0}.browser-frame>header{padding-inline:12px}.screenshot-viewport{aspect-ratio:1.12}.proof-image{width:auto;max-width:none;height:100%;object-fit:cover;object-position:left center}.proof-comiss .proof-image{left:-18%;width:210%}.proof-operation .proof-image{left:-48%;width:205%}.proof-narrative{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:15px}.product-heading{flex:0 0 100%;padding-right:30px}.proof-step{flex:0 0 86%;padding:25px 25px 25px 0;scroll-snap-align:start}.proof-index{bottom:8px}.stock-concept{padding:28px 22px}.stock-signal{overflow:auto}.stock-signal i{min-width:25px}.stock-signal span{white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.proof-image,.image-spotlight,.proof-step{transition:none!important;will-change:auto}}
+/* ARGUS Operação — the real interface carries equal product weight to COMISS. */
+@media(min-width:1001px){
+  .proof-operation{width:min(1500px,calc(100vw - (var(--pad) * 2)));margin-left:50%;transform:translateX(-50%);grid-template-columns:minmax(330px,.82fr) minmax(0,1.18fr);gap:clamp(42px,5vw,82px)}
+  .proof-operation .proof-narrative{max-width:510px;justify-self:end;width:100%}
+  .proof-operation .proof-visual{width:100%;max-width:950px;justify-self:start;top:88px}
+  .proof-operation .browser-frame{box-shadow:0 38px 90px #13141642}
+  .proof-operation .screenshot-viewport{width:100%}
+}
+@media(min-width:761px) and (max-width:1000px){
+  .proof-operation{width:calc(100vw - (var(--pad) * 2));margin-left:50%;transform:translateX(-50%);grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:32px}
+  .proof-operation .proof-narrative{order:1;display:block;padding-bottom:8vh}
+  .proof-operation .proof-visual{order:2;position:sticky;top:82px;align-self:start}
+  .proof-operation .product-heading{padding-bottom:30px}
+  .proof-operation .proof-step{min-height:42vh}
+}
+@media(max-width:760px){
+  .proof-operation .screenshot-viewport{aspect-ratio:1.18}
+  .proof-operation .proof-image{left:-36%;width:190%;object-position:center center}
+  .proof-operation .browser-frame{box-shadow:0 24px 55px #13141638}
+}
