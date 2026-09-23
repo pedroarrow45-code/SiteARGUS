@@ -27,3 +27,27 @@ $$('[data-proof-story]').forEach(story=>{
     steps.forEach(step=>observer.observe(step));
   } else activate(steps[0]);
 });
+
+// Qualifies the first conversation without storing visitor data on the site.
+$('#lead-form')?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const data=Object.fromEntries(new FormData(event.currentTarget));
+  const subject=`Briefing inicial — ${data.company || 'nova operação'}`;
+  const body=[
+    'BRIEFING INICIAL — ARGUS GROUP',
+    '',
+    `Nome: ${data.name}`,
+    `Empresa: ${data.company}`,
+    `Contato: ${data.contact}`,
+    `Frente: ${data.route}`,
+    `Porte da operação: ${data.scale || 'Não informado'}`,
+    `Prazo: ${data.deadline || 'Não informado'}`,
+    '',
+    'Processo que precisa mudar:',
+    data.problem,
+    '',
+    'Impacto atual:',
+    data.impact || 'Não informado'
+  ].join('\n');
+  location.href=`mailto:contato@argusintel.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
