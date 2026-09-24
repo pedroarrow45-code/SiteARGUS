@@ -1,0 +1,18 @@
+{
+  "name": "ARGUS INTEL",
+  "short_name": "ARGUS",
+  "description": "Tecnologia aplicada a operações empresariais.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

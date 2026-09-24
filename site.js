@@ -34,7 +34,7 @@ $('#lead-form')?.addEventListener('submit',event=>{
   const data=Object.fromEntries(new FormData(event.currentTarget));
   const subject=`Briefing inicial — ${data.company || 'nova operação'}`;
   const body=[
-    'BRIEFING INICIAL — ARGUS GROUP',
+    'BRIEFING INICIAL — ARGUS INTEL',
     '',
     `Nome: ${data.name}`,
     `Empresa: ${data.company}`,
