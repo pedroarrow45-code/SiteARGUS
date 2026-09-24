@@ -4,14 +4,14 @@
   "description": "Tecnologia aplicada a operações empresariais.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0b",
-  "theme_color": "#0a0a0b",
+  "background_color": "#0a0f1a",
+  "theme_color": "#0a0f1a",
   "lang": "pt-BR",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
